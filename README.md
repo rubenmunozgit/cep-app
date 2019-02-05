@@ -10,7 +10,7 @@ This projects has the following guidelines:
   3. *Home office*: Shows the address and the Google Maps iplocation
   4. *Tell me more*: A brief description in a Card.
 
-#Challenge
+### Challenge
 
 I tried to accomplinsh a weather app depending on the locations where you access the web.
 
