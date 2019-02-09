@@ -32,9 +32,8 @@
                     </p>
 
                     <div class="d-inline-block">
-                      <span id="currentTemp" class="display-3 text-white">--°
-                        <span class="display-3">C</span>
-                      </span>
+                      <img id="currentIcon" width="50" height="50">
+                      <span id="currentTemp" class="display-3 text-white">--</span>
                       <p id="currentState" class="text-left">--</p>
                     </div>
 
@@ -45,6 +44,7 @@
                           <span id="wind_speed" class="font-weight-bold">12MPH</span>
                         </div>
                         <div>
+                          <i class="fas fa-compass"></i>
                           <span id="wind_direcc" class="font-weight-bold">NE</span>
                         </div>
                       </div>
@@ -94,6 +94,10 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#WeatherContent" aria-controls="WeatherContent" aria-expanded="false" aria-label="Toggle navigation" id="checkWeather">
             <span>Check your Weather</span>
           </button>
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="CelsiusFah" value="F">
+            <label class="custom-control-label text-white" for="CelsiusFah">F</label>
+          </div>
         </nav>
       </div>
 

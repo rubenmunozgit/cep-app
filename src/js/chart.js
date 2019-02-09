@@ -1,27 +1,42 @@
-var minTemp = [],
+let minTemp = [],
   maxTemp = [],
   labelDates = [],
   city, country, currentTemp, currentState, currentTime, currentRise, currentDown,
-  currentWindSpeedMPH, currentWindSpeedKmH,
+  currentWindSpeedMPH, currentWindSpeedKmH, currentWindSpeed,
   currentWindDir, currentHumidity,
-  currentAccuracy;
+  currentAccuracy, currentIcon;
 //$(document).ready(function() {
 moment.updateLocale('en', {
-    calendar : {
-        sameDay : '[Today]',
-        nextDay : '[Tomorrow]',
-        nextWeek: 'dddd'
-    }
+  calendar: {
+    sameDay: '[Today]',
+    nextDay: '[Tomorrow]',
+    nextWeek: 'dddd'
+  }
 });
-console.log(weatherData);
+
+function setUSmetrics() {
+  metrics = "F";
+  speedUnit = "mph";
+}
+
+function setSystMetrics(mph) {
+  metrics = "C";
+  speedUnit = "kmh";
+}
+
 setTimeout(drawGraph, 8000); //wait untll weatherData is available to draw in the html
 function prepareData() {
+  minTemp = [];
+  maxTemp = [];
+  labelDates = [];
   city = weatherData.title;
   country = weatherData.parent.title;
-  currentTemp = weatherData.consolidated_weather[0].the_temp.toFixed(1);
+  currentIcon = weatherData.consolidated_weather[0].weather_state_abbr;
+  currentTemp = (metrics == "C" ? weatherData.consolidated_weather[0].the_temp.toFixed(1) : ((weatherData.consolidated_weather[0].the_temp * 9 / 5) + 32).toFixed(1));
   currentState = weatherData.consolidated_weather[0].weather_state_name;
   currentWindSpeedMPH = weatherData.consolidated_weather[0].wind_speed.toFixed(1);
-  currentWindSpeedKmH = (currentWindSpeedMPH*1.609344).toFixed(1);
+  currentWindSpeedKmH = (currentWindSpeedMPH * 1.609344).toFixed(1);
+  currentWindSpeed = (metrics == "F" ? currentWindSpeedMPH : currentWindSpeedKmH);
   currentWindDir = weatherData.consolidated_weather[0].wind_direction_compass;
   currentHumidity = weatherData.consolidated_weather[0].humidity;
   currentAccuracy = weatherData.consolidated_weather[0].predictability;
@@ -29,19 +44,19 @@ function prepareData() {
   currentRise = moment(weatherData.sun_rise).utcOffset(weatherData.sun_rise).format('HH:mm');
   currentDown = moment(weatherData.sun_set).utcOffset(weatherData.sun_set).format('HH:mm');
   for (let i = 0; i < weatherData.consolidated_weather.length; i++) {
-    minTemp.push(weatherData.consolidated_weather[i].min_temp.toFixed(2));
-    maxTemp.push(weatherData.consolidated_weather[i].max_temp.toFixed(2));
+    minTemp.push((metrics == "C" ? weatherData.consolidated_weather[i].min_temp.toFixed(1) : ((weatherData.consolidated_weather[i].min_temp * 9 / 5) + 32).toFixed(1)));
+    maxTemp.push((metrics == "C" ? weatherData.consolidated_weather[i].max_temp.toFixed(1) : ((weatherData.consolidated_weather[i].max_temp * 9 / 5) + 32).toFixed(1)));
     labelDates.push(moment(weatherData.consolidated_weather[i].applicable_date).calendar());
   }
-
 }
 
 function setCardwithData() {
-  $("#cityCountry").text(city + ', '+ country);
-  $("#currentTemp").text(currentTemp + '°');
+  $("#cityCountry").text(city + ', ' + country);
+  $("#currentIcon").attr('src', weatherHost + weatherIcons[currentIcon]);
+  $("#currentTemp").text(currentTemp + '° ' + metrics);
   $("#currentState").text(currentState);
   $("#currentTime").text(currentTime);
-  $("#wind_speed").text(currentWindSpeedMPH + 'MPH - ' + currentWindSpeedKmH + 'Km/h');
+  $("#wind_speed").text(currentWindSpeed + "-" + speedUnit);
   $("#wind_direcc").text(currentWindDir);
   $("#humidity").text(currentHumidity);
   $("#predictability").text(currentAccuracy);
