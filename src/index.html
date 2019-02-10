@@ -16,6 +16,7 @@
 <body>
   <main role="main">
     <header>
+      <!--Weather Content -->
       <div class="pos-f-t">
         <div class="collapse" id="WeatherContent">
           <div class="bg-dark p-4">
@@ -100,18 +101,19 @@
           </div>
         </nav>
       </div>
-
+    <!--Weather Content -->
     </header>
+    <!--Image carrousel -->
     <div id="carouselMadrid" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../src/img/GranVia.jpg" class="d-block w-100" alt="Gran Via" width="1200" height="700" style="object-fit: cover">
+          <img src="../src/img/GranVia.jpg" class="d-block w-100" alt="Gran Via" width="auto" height="500" style="object-fit: contain">
         </div>
         <div class="carousel-item">
-          <img src="../src/img/PuertaAlcala.jpg" class="d-block w-100" alt="Puerta Alcala" width="1200" height="700" style="object-fit: cover">
+          <img src="../src/img/PuertaAlcala.jpg" class="d-block w-100" alt="Puerta Alcala" width="auto" height="500" style="object-fit: contain">
         </div>
         <div class="carousel-item">
-          <img src="../src/img/Retiro.jpg" class="d-block w-100" alt="Retiro" width="1200" height="700" style="object-fit: cover">
+          <img src="../src/img/Retiro.jpg" class="d-block w-100" alt="Retiro" width="auto" height="500" style="object-fit: contain">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselMadrid" role="button" data-slide="prev">
@@ -123,6 +125,7 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+    <!--Image carrousel -->
     <!-- Row with button -->
     <div class="container">
       <div class="row">
@@ -157,9 +160,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js" integrity="sha256-rjYnB0Bull7k2XkbJ03UNGqMuMieR769uQVGSSlsi6A=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js" integrity="sha256-AdQN98MVZs44Eq2yTwtoKufhnU+uZ7v2kXnD5vqzZVo=" crossorigin="anonymous"></script>
+  <script src="../src/js/chart.js"></script>
   <script src="../src/js/iplocation.js"></script>
   <script src="../src/js/init.js"></script>
-  <script src="../src/js/chart.js"></script>
 </body>
 
 </html>

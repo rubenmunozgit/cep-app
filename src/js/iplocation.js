@@ -27,8 +27,11 @@ function getAPIinfo() {
             })
             .then(function(weatherPrediction) {
               weatherData = weatherPrediction;
+              drawGraph();
             });
         });
     });
 }
-getAPIinfo();
+$(document).ready(function(){
+  getAPIinfo();
+});

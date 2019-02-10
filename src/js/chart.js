@@ -5,7 +5,7 @@ let minTemp = [],
   currentWindSpeedMPH, currentWindSpeedKmH, currentWindSpeed,
   currentWindDir, currentHumidity,
   currentAccuracy, currentIcon;
-//$(document).ready(function() {
+
 moment.updateLocale('en', {
   calendar: {
     sameDay: '[Today]',
@@ -24,7 +24,7 @@ function setSystMetrics(mph) {
   speedUnit = "kmh";
 }
 
-setTimeout(drawGraph, 8000); //wait untll weatherData is available to draw in the html
+
 function prepareData() {
   minTemp = [];
   maxTemp = [];
@@ -50,7 +50,7 @@ function prepareData() {
   }
 }
 
-function setCardwithData() {
+function setCardwithData() {//jQuery to upate the DOM
   $("#cityCountry").text(city + ', ' + country);
   $("#currentIcon").attr('src', weatherHost + weatherIcons[currentIcon]);
   $("#currentTemp").text(currentTemp + '° ' + metrics);
@@ -124,5 +124,3 @@ function drawGraph() {
     }
   });
 }
-
-//});

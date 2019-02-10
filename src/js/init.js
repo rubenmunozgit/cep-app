@@ -19,8 +19,10 @@ let weatherIcons = {
   "lc": "/static/img/weather/hc.svg",
   "c": "/static/img/weather/hc.svg"
 }
-let metrics = "C", speedUnit="Kmh";
+let metrics, speedUnit;
 let htmlbody;
+
+setSystMetrics();
 
 function removeClasses() {
   $(".card-img-top").remove();
@@ -95,7 +97,5 @@ $("#CelsiusFah").click(function(event) {
   else {
     setSystMetrics();
   }
-  prepareData();
-  setCardwithData();
   drawGraph();
 })
