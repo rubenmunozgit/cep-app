@@ -3,7 +3,7 @@ let personalProfile = {
   "name": "Ruben Muñoz Palomino",
   "jobTitle": "GPS (Goblal Professional Service) API Integration Support",
   "homeOffice": "Paseo de la Castellana, 259, Madrid",
-  "tellMeMore": "A dad of a wonderfull 2 twin girls, and a loving husband. <br>" +
+  "tellMeMore": "A dad of a wonderfull 2 twin girls, and a loved husband. <br>" +
     "At work, I'm part of the HomeAway integrated property management team.<br> Supervising integration with 3rd party softwares. <br> Every integration has to run successfully to provide a better traveler experience at booking time."
 };
 
