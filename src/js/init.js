@@ -8,16 +8,16 @@ let personalProfile = {
 };
 
 let weatherIcons = {
-  "sn": "/static/img/weather/hc.svg",
-  "sl": "/static/img/weather/hc.svg",
-  "h": "/static/img/weather/hc.svg",
-  "t": "/static/img/weather/hc.svg",
-  "hr": "/static/img/weather/hc.svg",
-  "lr": "/static/img/weather/hc.svg",
-  "s": "/static/img/weather/hc.svg",
+  "sn": "/static/img/weather/sn.svg",
+  "sl": "/static/img/weather/sl.svg",
+  "h": "/static/img/weather/h.svg",
+  "t": "/static/img/weather/t.svg",
+  "hr": "/static/img/weather/hr.svg",
+  "lr": "/static/img/weather/lr.svg",
+  "s": "/static/img/weather/s.svg",
   "hc": "/static/img/weather/hc.svg",
-  "lc": "/static/img/weather/hc.svg",
-  "c": "/static/img/weather/hc.svg"
+  "lc": "/static/img/weather/lc.svg",
+  "c": "/static/img/weather/c.svg"
 }
 let metrics, speedUnit;
 let htmlbody;
