@@ -22,3 +22,6 @@ Second get the waather based in the lat and long.
 Finally updates the values and shows in the header of the page as *"Collapse"* item
 
 This data is ready when the buttom *"Check your Weather"* has a background Green color
+
+## Check it here
+https://rubenmunozgit.github.io/cep-app/src/index
